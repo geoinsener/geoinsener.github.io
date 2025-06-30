@@ -57,7 +57,7 @@ if (lang === "et") {
         <p>Email: <a href="mailto:lehar.leetsaar@taltech.ee">lehar.leetsaar@taltech.ee</a></p>
         <p>Telefon: +372 5340 9015</p>
     `;
-    document.querySelector("#footer").innerText = "© 2025 Lehar Leetsaar. Kõik õigused kaitstud.";
+    document.querySelector("#footer").innerText = "© 2025 IB Lehar Leetsaar. Kõik õigused kaitstud.";
 
     // 👉 Sidebar linkide muutmine eestikeelseks
     navLinks[0].innerText = "Avaleht";
@@ -76,7 +76,7 @@ if (lang === "et") {
         <p>Email: <a href="mailto:lehar.leetsaar@taltech.ee">lehar.leetsaar@taltech.ee</a></p>
         <p>Phone: +372 5340 9015</p>
     `;
-    document.querySelector("#footer").innerText = "© 2025 Lehar Leetsaar. All rights reserved.";
+    document.querySelector("#footer").innerText = "© 2025 IB Lehar Leetsaar. All rights reserved.";
 
     // 👉 Sidebar linkide muutmine inglise keelseks
     navLinks[0].innerText = "Home";
