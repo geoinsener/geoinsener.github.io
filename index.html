@@ -1,60 +1,176 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geoinsener</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="IB Lehar Leetsaar — geotehniline projekteerimine, vundamendid ja ekspertiis.">
+  <title>IB Lehar Leetsaar — Geoinsener</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Liigu sisu juurde</a>
 
-    <aside class="sidebar">
-        <nav>
-            <ul>
-                <li><a href="#hero">Avaleht</a></li>
-                <li><a href="#about">Minust</a></li>
-                <li><a href="#references">Referentsid</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-            <div class="language-switch">
-                <a href="#">EST</a> | <a href="#">ENG</a>
-            </div>
-        </nav>
-    </aside>
-
-    <div class="content">
-        <section id="hero" class="hero">
-            <h1>IB Lehar Leetsaar</h1>
-            <p>Geotehniline inseneeria ja tõhusad vundamendilahendused</p>
-        </section>
-
-        <section id="about" class="section">
-            <h2>Minust</h2>
-            <p>Lühikirjeldus endast. <span class="read-more">Loe rohkem...</span></p>
-        </section>
-
-        <section id="references" class="section">
-            <h2>Referentsid</h2>
-            <div class="gallery">
-                <img src="images/reference1.jpg" alt="Referents 1">
-                <img src="images/reference2.jpg" alt="Referents 2">
-            </div>
-        </section>
-        <section id="contact" class="section">
-            <h2>Kontakt</h2>
-            <div class="contact-container">
-                <img class="contact-photo" src="images/contact-photo.jpg" alt="Kontaktisik">
-                <div class="contact-info">
-                    <!-- Siia lisab skript emaili ja telefoni -->
-                </div>
-            </div>
-        </section>
-        
-
-        <footer id="footer">
-            © 2025 Lehar Leetsaar. Kõik õigused kaitstud.
-        </footer>
+  <aside class="sidebar" aria-label="Põhinavigatsioon">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">LL</span>
+      <div class="brand-text">
+        <strong>Lehar Leetsaar</strong>
+        <small>Geotehnika</small>
+      </div>
     </div>
-<script src="script.js"></script>
+    <nav>
+      <ul>
+        <li><a href="#hero" data-i18n="nav.home">Avaleht</a></li>
+        <li><a href="#about" data-i18n="nav.about">Minust</a></li>
+        <li><a href="#services" data-i18n="nav.services">Teenused</a></li>
+        <li><a href="#references" data-i18n="nav.references">Referentsid</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Keelevahetus">
+      <button type="button" data-lang="et" aria-pressed="true">EST</button>
+      <span aria-hidden="true">|</span>
+      <button type="button" data-lang="en" aria-pressed="false">ENG</button>
+    </div>
+  </aside>
+
+  <main id="main" class="content">
+    <section id="hero" class="hero" aria-label="Kangelasplokk">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <h1 data-i18n="hero.title">IB Lehar Leetsaar</h1>
+        <p class="lead" data-i18n="hero.tagline">Geotehniline inseneeria ja tõhusad vundamendilahendused</p>
+        <a class="cta" href="#contact" data-i18n="hero.cta">Küsi nõu</a>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 data-i18n="about.title">Minust</h2>
+        <p class="balanced" data-i18n="about.short">
+          Olen töötanud ehitusinsenerina üle 20 aasta ning osalenud rohkem kui 450 hoone konstruktsioonide projekteerimisel. Valdavale osale neist olen koostanud ka vundamendilahendused.
+        </p>
+        <details>
+          <summary data-i18n="about.more">Loe pikemalt</summary>
+          <div class="balanced" data-i18n="about.long"></div>
+        </details>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 data-i18n="services.title">Teenused</h2>
+        <ul class="service-list" aria-label="Teenuste loend">
+          <li>
+            <h3 data-i18n="services.s1.title">Geotehniline projekteerimine</h3>
+            <p class="balanced" data-i18n="services.s1.desc">
+              Vundamendid, vaiad, pinnaseparandus, kandevõime ja deformatsioonide hinnangud.
+            </p>
+          </li>
+          <li>
+            <h3 data-i18n="services.s2.title">Uuringutulemuste tõlgendus</h3>
+            <p class="balanced" data-i18n="services.s2.desc">
+              CPTu, DPH/DPM, piezokooni ja seismiliste sondimiste sidumine arvutusmudelitega.
+            </p>
+          </li>
+          <li>
+            <h3 data-i18n="services.s3.title">Ekspertiis ja konsultatsioon</h3>
+            <p class="balanced" data-i18n="services.s3.desc">
+              Projekti audit, lahendusvariantide võrdlus ja riskipõhine otsustugi.
+            </p>
+          </li>
+          <li>
+            <h3 data-i18n="services.s4.title">Koolitus ja juhendamine</h3>
+            <p class="balanced" data-i18n="services.s4.desc">
+              Erialakoolitused ja loengud praktikutele ning noortele inseneridele.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="references" class="section references">
+      <div class="container">
+        <h2 data-i18n="references.title">Referentsid</h2>
+
+        <div class="ref-grid">
+          <figure class="ref-figure">
+            <img src="ref-eramud.svg" alt="Eramute vundamentide tööd — fotoplats" />
+            <figcaption class="small" data-i18n="references.photoHintPrivate">Lisa siia oma foto: asenda fail <code>ref-eramud.svg</code> pildiga (nt <code>ref-eramud.jpg</code>).</figcaption>
+          </figure>
+          <div>
+            <h3 data-i18n="references.private.title">Vundamendid eramutele</h3>
+            <ul class="ref-list" data-i18n="references.private.list"></ul>
+          </div>
+        </div>
+
+        <div class="ref-grid">
+          <figure class="ref-figure">
+            <img src="ref-korterid.svg" alt="Korterelamute ja ridaelamute vundamendid — fotoplats" />
+            <figcaption class="small" data-i18n="references.photoHintApt">Lisa siia oma foto: asenda fail <code>ref-korterid.svg</code> pildiga.</figcaption>
+          </figure>
+          <div>
+            <h3 data-i18n="references.apartments.title">Vundamendid korterelamutele ja ridaelamutele</h3>
+            <ul class="ref-list" data-i18n="references.apartments.list"></ul>
+          </div>
+        </div>
+
+        <div class="ref-grid">
+          <figure class="ref-figure">
+            <img src="ref-avalikud.svg" alt="Avalike hoonete ja büroode vundamendid — fotoplats" />
+            <figcaption class="small" data-i18n="references.photoHintPublic">Lisa siia oma foto: asenda fail <code>ref-avalikud.svg</code> pildiga.</figcaption>
+          </figure>
+          <div>
+            <h3 data-i18n="references.public.title">Vundamendid avalikele hoonetele ja büroodele</h3>
+            <ul class="ref-list" data-i18n="references.public.list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <img class="contact-photo" src="contact-photo.jpg" alt="Lehar Leetsaar portree">
+          <div class="contact-info">
+            <h2 data-i18n="contact.title">Kontakt</h2>
+            <p><span class="muted" data-i18n="contact.email">E-post:</span> 
+              <a href="mailto:lehar.leetsaar@taltech.ee">lehar.leetsaar@taltech.ee</a></p>
+            <p><span class="muted" data-i18n="contact.phone">Telefon:</span> 
+              <a href="tel:+37253409015">+372 5340 9015</a></p>
+          </div>
+        </div>
+        <!-- Formspree: replace the XXXXXXXX with your real Form ID -->
+        <form class="contact-form" id="contactForm" method="POST" novalidate>
+          <h3 data-i18n="contact.form.title">Võta ühendust</h3>
+          <input type="hidden" name="_subject" value="Uus kontaktisõnum veebilehelt">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+          <label>
+            <span data-i18n="contact.form.name">Nimi</span>
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            <span data-i18n="contact.form.email">E-post</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            <span data-i18n="contact.form.message">Sõnum</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="cta" data-i18n="contact.form.submit">Saada</button>
+          <p id="formStatus" class="small" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="small" data-i18n="footer.copy">© 2025 IB Lehar Leetsaar. Kõik õigused kaitstud.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
