@@ -1,7 +1,7 @@
 /* Formspree integration + i18n
  * Replace FORMSPREE_ENDPOINT with your real endpoint, e.g. https://formspree.io/f/abcxyz
  */
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrbljkpz";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/XXXXXXXX";
 
 // Reference items (EST only, used for both languages)
 const REFS_PRIVATE = [
