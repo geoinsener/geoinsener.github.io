@@ -60,9 +60,11 @@ a:hover{text-decoration:underline}
 .hero-pattern{
   position:absolute; inset:0; z-index:0;
   background:
-    radial-gradient(60% 60% at 80% 20%, rgba(59,122,87,.35), transparent 60%),
-    radial-gradient(60% 60% at 10% 90%, rgba(47,98,70,.35), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+    linear-gradient(rgba(11,15,13,.45), rgba(11,15,13,.45)),
+    url('pilt1.jpg') center 30% / cover no-repeat,
+    url('pilt2.jpg') right center / cover no-repeat;
+  background-blend-mode: multiply, normal, normal;
+  filter: saturate(.9) contrast(.95) brightness(.85);
 }
 .hero::before{
   content:''; position:absolute; inset:-200% -200% 0 -200%; opacity:.22;
@@ -90,15 +92,10 @@ a:hover{text-decoration:underline}
 .service-list li{background:var(--panel); padding:1.25rem; border-radius:1rem; border:1px solid rgba(255,255,255,.06)}
 
 /* References */
-.references .ref-grid{display:grid; gap:1.25rem; grid-template-columns:340px 1fr; align-items:start; margin:2rem 0}
-.ref-figure{background:var(--panel); border-radius:1rem; padding:.75rem; border:1px solid rgba(255,255,255,.06)}
-.ref-figure img{width:100%; height:auto; display:block; border-radius:.8rem}
+.references .ref-grid{margin:1.5rem 0}
 .ref-list{columns:2; column-gap:2rem; padding-left:1rem}
 .ref-list li{break-inside:avoid; margin:.25rem 0}
-@media (max-width: 900px){
-  .references .ref-grid{grid-template-columns:1fr}
-  .ref-list{columns:1}
-}
+@media (max-width: 900px){.ref-list{columns:1}}
 
 /* Contact */
 .contact-grid{display:grid; gap:1.5rem; grid-template-columns:1.1fr .9fr; align-items:start}
@@ -126,4 +123,17 @@ a:hover{text-decoration:underline}
   .sidebar nav ul{display:flex; gap:1rem; margin:0}
   .service-list{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
+}
+
+
+/* Illustrations (gallery) */
+.illustrations .img-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:1rem;
+}
+.illustrations figure{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:1rem; overflow:hidden; margin:0}
+.illustrations img{width:100%; height:auto; display:block}
+@media (max-width: 900px){
+  .illustrations .img-grid{grid-template-columns:1fr}
 }

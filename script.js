@@ -1,7 +1,7 @@
 /* Formspree integration + i18n
  * Replace FORMSPREE_ENDPOINT with your real endpoint, e.g. https://formspree.io/f/abcxyz
  */
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrbljkpz";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/XXXXXXXX";
 
 // Reference items (EST only, used for both languages)
 const REFS_PRIVATE = [
@@ -45,6 +45,9 @@ const i18n = {
     "services.s4.title":"Koolitus ja juhendamine",
     "services.s4.desc":"Erialakoolitused ja loengud praktikutele ning noortele inseneridele.",
     "references.title":"Referentsid",
+    "illustrations.title":"Illustratsioonid",
+    "illustrations.c1":"Vundamenditööde kaevik (illustratiivne)",
+    "illustrations.c2":"Vundamendi taldmikud platsil (illustratiivne)",
     "references.private.title":"Vundamendid eramutele",
     "references.apartments.title":"Vundamendid korterelamutele ja ridaelamutele",
     "references.public.title":"Vundamendid avalikele hoonetele ja büroodele",
@@ -76,6 +79,9 @@ const i18n = {
     "services.s4.title":"Training & lecturing",
     "services.s4.desc":"Professional trainings and lectures for practitioners and junior engineers.",
     "references.title":"References",
+    "illustrations.title":"Illustrations",
+    "illustrations.c1":"Foundation trench (illustrative)",
+    "illustrations.c2":"Footing blocks on site (illustrative)",
     "references.private.title":"Foundations for private houses",
     "references.apartments.title":"Foundations for apartment and row houses",
     "references.public.title":"Foundations for public and office buildings",
