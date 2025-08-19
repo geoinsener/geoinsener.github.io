@@ -152,28 +152,6 @@ async function handleFormSubmit(e){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile nav toggle
-  const sidebar = document.querySelector('.sidebar');
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('main-nav');
-  if (toggleBtn && sidebar && nav){
-    const closeMenu = () => {
-      sidebar?.setAttribute('data-open','false');
-      toggleBtn.setAttribute('aria-expanded','false');
-    };
-    toggleBtn.addEventListener('click', () => {
-      const isOpen = sidebar.getAttribute('data-open') === 'true';
-      sidebar.setAttribute('data-open', String(!isOpen));
-      toggleBtn.setAttribute('aria-expanded', String(!isOpen));
-    });
-    // Close when clicking a link
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
-    // Close on escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-  }
-
   applyI18n(currentLang);
   document.querySelectorAll('.language-switch [data-lang]').forEach(btn => {
     btn.addEventListener('click', () => applyI18n(btn.dataset.lang));

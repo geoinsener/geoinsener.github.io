@@ -130,161 +130,33 @@ a:hover{text-decoration:underline}
 }
 
 
-/* === Mobile nav === */
-.menu-toggle{
-  display:none;
-  background:rgba(255,255,255,.15);
-  color:#fff; border:0; padding:.55rem .75rem; border-radius:.6rem; cursor:pointer;
-}
+/* === v6: Hard reset for vertical text in ABOUT/sections on mobile === */
 @media (max-width: 960px){
-  .menu-toggle{display:inline-block}
-  .sidebar{gap:.75rem}
-  /* collapse nav */
-  #main-nav{position:relative}
-  .sidebar nav ul{
-    display:none;
-    position:absolute;
-    top:100%; left:0; right:0;
-    margin-top:.5rem;
-    background:rgba(0,0,0,.55);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:.75rem;
-    padding:.5rem;
-    flex-direction:column;
-    backdrop-filter:saturate(110%) blur(6px);
-  }
-  .sidebar[data-open="true"] nav ul{display:flex}
-  .sidebar nav a{padding:.5rem .6rem; border-radius:.5rem; display:block}
-  .sidebar nav a:focus-visible, .sidebar nav a:hover{background:rgba(255,255,255,.1)}
-}
-
-
-/* === Mobile text wrapping fix === */
-@media (max-width: 600px){
-  .content, .section, .about, .services, .references {
-    max-width: 100% !important;
-    padding: 0 1rem !important;
-  }
-  p, li {
-    word-break: normal;
-    white-space: normal;
-  }
-}
-
-
-/* === Mobile text width & layout fixes === */
-@media (max-width: 600px){
-  /* Make all common content wrappers full-width and stacked */
-  .layout, .container, .main, .content, .section, .about, .services, .references,
-  .hero, .hero-inner, .split, .two-col, .grid, .row, .cols { 
-    max-width: 100% !important;
-    width: 100% !important;
-    display: block !important;
-  }
-  /* If any wrappers use flex/grid, stack them in one column */
-  .split, .two-col, .grid, .row, .cols {
-    grid-template-columns: 1fr !important;
-    grid-auto-flow: row !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
-  }
-  /* Ensure paragraphs and list items flow normally */
-  p, li {
-    white-space: normal !important;
-    word-break: normal !important;
-    overflow-wrap: anywhere;
-    line-height: 1.5;
-  }
-  /* Make list markers outside and add padding for readability */
-  ul, ol {
-    list-style-position: outside;
-    padding-left: 1.25rem;
-  }
-  /* Reset 'li' display in case it was changed */
-  li { display: list-item !important; }
-  /* Images scale down on small screens */
-  img { max-width: 100%; height: auto; }
-}
-
-
-/* Ensure paragraphs using .balanced take full width on small screens */
-@media (max-width: 900px){
-  .balanced{max-width: 100% !important;}
-  p, li { letter-spacing: normal; word-spacing: normal; hyphens: auto; }
-}
-
-
-/* === Mobile vertical-wrap + nav fixes === */
-@media (max-width: 900px){
-  /* Force normal horizontal writing and prevent char-by-char wrapping */
-  h1,h2,h3,h4,h5,h6,p,li,a,span{ 
-    writing-mode: horizontal-tb !important; 
-    text-orientation: mixed !important; 
-  }
-  p, li{
-    white-space: normal !important;
-    word-break: keep-all !important;
-    overflow-wrap: normal !important;
-  }
-
-  /* Navigation: keep labels on a single line and remove bullets */
-  .sidebar nav ul{ list-style: none !important; padding-left: 0 !important; }
-  .sidebar nav a{ white-space: nowrap !important; }
-
-  /* Ensure about/hero content isn't constrained to a tiny column */
-  .about, .about .container, .about .text,
-  .section, .section .container, .content, .content .container,
-  .hero, .hero-inner{
-    max-width: 100% !important;
-    width: 100% !important;
-    display: block !important;
-  }
-}
-
-
-/* === Strong mobile safeguards for vertical text === */
-@media (max-width: 900px){
-  /* Force nav items inline, horizontal, and with natural wrapping */
-  .sidebar nav ul{display:flex !important; flex-wrap:wrap !important; list-style:none !important; padding-left:0 !important; align-items:center}
-  .sidebar nav li{display:inline-flex !important; margin:0 .5rem .5rem 0 !important}
-  .sidebar nav a{
-    display:inline-block !important;
+  /* Kill multi-column / odd writing modes in content sections */
+  .about, .about *, .section, .section * {
     writing-mode: horizontal-tb !important;
-    white-space:nowrap !important;
-    word-break: keep-all !important;
-    text-transform:none !important;
+    text-orientation: mixed !important;
   }
 
-  /* Ensure common text blocks render as normal paragraphs */
-  .section p, .section .balanced, .about p, .about .balanced, .hero p{
-    display:block !important;
-    max-width: 75ch !important;
-    writing-mode: horizontal-tb !important;
+  .about, .about .container, .about .balanced,
+  .section .balanced, .about .columns, .about .split, .about .two-col, .section .split {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    column-count: 1 !important;
+    column-gap: 0 !important;
+    column-width: auto !important;
+  }
+
+  .about h1, .about h2, .about h3, .about h4, .about h5, .about h6,
+  .about p, .about li, .section p, .section li {
     white-space: normal !important;
     word-break: normal !important;
     overflow-wrap: anywhere !important;
+    line-height: 1.5 !important;
+    display: block !important;
   }
 
-  /* Prevent overly narrow columns */
-  .section .container, .about .container{
-    display:block !important;
-    width:100% !important;
-    max-width:calc(100% - 2rem) !important;
-    margin-inline:auto !important;
-  }
-}
-
-
-/* === Mobile: turn sidebar into top bar === */
-@media (max-width: 960px){
-  .sidebar{
-    position: sticky !important;
-    top: 0; inset: 0 0 auto 0 !important;
-    width: 100% !important; height: auto !important;
-    flex-direction: row !important; align-items: center !important; justify-content: flex-start !important;
-    padding: .75rem 1rem !important;
-  }
-  .content{ margin-left: 0 !important; }
-  /* keep space under sticky header */
-  #main{ scroll-margin-top: 64px; }
+  /* Small horizontal padding for readability */
+  .about, .section { padding-left: 1rem !important; padding-right: 1rem !important; }
 }
