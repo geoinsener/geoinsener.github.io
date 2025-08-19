@@ -128,3 +128,32 @@ a:hover{text-decoration:underline}
 @media (max-width: 900px){
   .illustrations .img-grid{grid-template-columns:1fr}
 }
+
+
+/* === Mobile nav === */
+.menu-toggle{
+  display:none;
+  background:rgba(255,255,255,.15);
+  color:#fff; border:0; padding:.55rem .75rem; border-radius:.6rem; cursor:pointer;
+}
+@media (max-width: 960px){
+  .menu-toggle{display:inline-block}
+  .sidebar{gap:.75rem}
+  /* collapse nav */
+  #main-nav{position:relative}
+  .sidebar nav ul{
+    display:none;
+    position:absolute;
+    top:100%; left:0; right:0;
+    margin-top:.5rem;
+    background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:.75rem;
+    padding:.5rem;
+    flex-direction:column;
+    backdrop-filter:saturate(110%) blur(6px);
+  }
+  .sidebar[data-open="true"] nav ul{display:flex}
+  .sidebar nav a{padding:.5rem .6rem; border-radius:.5rem; display:block}
+  .sidebar nav a:focus-visible, .sidebar nav a:hover{background:rgba(255,255,255,.1)}
+}
