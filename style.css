@@ -87,7 +87,7 @@ a:hover{text-decoration:underline}
 .about summary{cursor:pointer; font-weight:700}
 
 /* Services */
-.service-list{display:grid; gap:1rem; grid-template-columns:repeat(2,minmax(0,1fr)); margin:1rem 0 0}
+.service-list{display:grid; gap:1rem; grid-template-columns:repeat(2,minmax(0,1fr)); margin:1rem 0 0; list-style: none; padding-left: 0}
 .service-list li{background:var(--panel); padding:1.25rem; border-radius:1rem; border:1px solid rgba(255,255,255,.06)}
 
 /* References */
