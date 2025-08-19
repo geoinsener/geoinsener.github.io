@@ -273,3 +273,18 @@ a:hover{text-decoration:underline}
     margin-inline:auto !important;
   }
 }
+
+
+/* === Mobile: turn sidebar into top bar === */
+@media (max-width: 960px){
+  .sidebar{
+    position: sticky !important;
+    top: 0; inset: 0 0 auto 0 !important;
+    width: 100% !important; height: auto !important;
+    flex-direction: row !important; align-items: center !important; justify-content: flex-start !important;
+    padding: .75rem 1rem !important;
+  }
+  .content{ margin-left: 0 !important; }
+  /* keep space under sticky header */
+  #main{ scroll-margin-top: 64px; }
+}
