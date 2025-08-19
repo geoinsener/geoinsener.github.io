@@ -240,3 +240,36 @@ a:hover{text-decoration:underline}
     display: block !important;
   }
 }
+
+
+/* === Strong mobile safeguards for vertical text === */
+@media (max-width: 900px){
+  /* Force nav items inline, horizontal, and with natural wrapping */
+  .sidebar nav ul{display:flex !important; flex-wrap:wrap !important; list-style:none !important; padding-left:0 !important; align-items:center}
+  .sidebar nav li{display:inline-flex !important; margin:0 .5rem .5rem 0 !important}
+  .sidebar nav a{
+    display:inline-block !important;
+    writing-mode: horizontal-tb !important;
+    white-space:nowrap !important;
+    word-break: keep-all !important;
+    text-transform:none !important;
+  }
+
+  /* Ensure common text blocks render as normal paragraphs */
+  .section p, .section .balanced, .about p, .about .balanced, .hero p{
+    display:block !important;
+    max-width: 75ch !important;
+    writing-mode: horizontal-tb !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Prevent overly narrow columns */
+  .section .container, .about .container{
+    display:block !important;
+    width:100% !important;
+    max-width:calc(100% - 2rem) !important;
+    margin-inline:auto !important;
+  }
+}
