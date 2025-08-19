@@ -205,3 +205,10 @@ a:hover{text-decoration:underline}
   /* Images scale down on small screens */
   img { max-width: 100%; height: auto; }
 }
+
+
+/* Ensure paragraphs using .balanced take full width on small screens */
+@media (max-width: 900px){
+  .balanced{max-width: 100% !important;}
+  p, li { letter-spacing: normal; word-spacing: normal; hyphens: auto; }
+}
