@@ -157,3 +157,51 @@ a:hover{text-decoration:underline}
   .sidebar nav a{padding:.5rem .6rem; border-radius:.5rem; display:block}
   .sidebar nav a:focus-visible, .sidebar nav a:hover{background:rgba(255,255,255,.1)}
 }
+
+
+/* === Mobile text wrapping fix === */
+@media (max-width: 600px){
+  .content, .section, .about, .services, .references {
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+  p, li {
+    word-break: normal;
+    white-space: normal;
+  }
+}
+
+
+/* === Mobile text width & layout fixes === */
+@media (max-width: 600px){
+  /* Make all common content wrappers full-width and stacked */
+  .layout, .container, .main, .content, .section, .about, .services, .references,
+  .hero, .hero-inner, .split, .two-col, .grid, .row, .cols { 
+    max-width: 100% !important;
+    width: 100% !important;
+    display: block !important;
+  }
+  /* If any wrappers use flex/grid, stack them in one column */
+  .split, .two-col, .grid, .row, .cols {
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  /* Ensure paragraphs and list items flow normally */
+  p, li {
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+  }
+  /* Make list markers outside and add padding for readability */
+  ul, ol {
+    list-style-position: outside;
+    padding-left: 1.25rem;
+  }
+  /* Reset 'li' display in case it was changed */
+  li { display: list-item !important; }
+  /* Images scale down on small screens */
+  img { max-width: 100%; height: auto; }
+}
