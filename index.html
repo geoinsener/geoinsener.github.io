@@ -9,8 +9,9 @@
 
   <!-- Hotfix: inline CSS to kill vertical text on some in-app browsers -->
   <!-- Hotfix v2: force horizontal text & normal block flow in content sections (for in-app browsers) -->
-  <style id="hotfix-horizontal-text-v2">
-    .content, .content * {
+  <!-- Hotfix v3: kill multi-columns + enforce normal flow for headings/lists (wide breakpoint) -->
+  <style id="hotfix-horizontal-text-scoped">
+    html.inapp .content, html.inapp .content * {
       writing-mode: horizontal-tb !important;
       -webkit-writing-mode: horizontal-tb !important;
       text-orientation: mixed !important;
@@ -22,22 +23,29 @@
       text-transform: none !important;
       transform: none !important;
     }
-    /* Ensure headings and paragraphs participate in normal block layout */
-    .content h1, .content h2, .content h3, .content h4, .content h5, .content h6,
-    .content p, .content summary {
-      display: block !important;
-      line-height: 1.4 !important;
+    html.inapp .content h1, html.inapp .content h2, html.inapp .content h3,
+    html.inapp .content h4, html.inapp .content h5, html.inapp .content h6,
+    html.inapp .content p, html.inapp .content li, html.inapp .content summary {
+      display:block !important; line-height:1.5 !important;
     }
-    /* Ensure lists are real lists, not vertical letter stacks */
-    .content ul, .content ol { display: block !important; padding-left: 1.1rem !important; }
-    .content li { display: list-item !important; }
-    /* Mobile tweaks */
-    @media (max-width: 640px){
+    /* Disable multi-columns in references only for in-app or phones */
+    html.inapp .ref-list { columns: 1 !important; -webkit-columns:1 !important; -moz-columns:1 !important; }
+    @media (max-width: 740px){
       .balanced{ max-width: 100% !important; }
-      .container{ max-width: 100% !important; }
-      .section{ padding-left: 1rem !important; padding-right: 1rem !important; }
+      .ref-list { columns: 1 !important; -webkit-columns:1 !important; -moz-columns:1 !important; }
     }
   </style>
+
+
+  <script id="ua-flag">
+    (function(){
+      try{
+        var ua = navigator.userAgent || "";
+        var isInApp = /FBAN|FBAV|Instagram|Line|MicroMessenger|Messenger|Twitter/i.test(ua);
+        if(isInApp){ document.documentElement.classList.add('inapp'); }
+      }catch(e){}
+    })();
+  </script>
 
 </head>
 <body>
