@@ -8,6 +8,17 @@
   --panel: rgba(255,255,255,.05);
   --ring: 0 0 0 3px rgba(59,122,87,.35);
 }
+/* --- HARD RESET: force horizontal text everywhere to avoid vertical rendering on some mobile browsers --- */
+html, body, main, section, article, aside, nav, header, footer,
+div, p, h1, h2, h3, h4, h5, h6, ul, li, a, span, strong, small,
+details, summary {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
 
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -162,21 +173,7 @@ a:hover{text-decoration:underline}
 }
 
 /* Mobiili tekstifiks */
-@media (max-width: 600px) {
-  .balanced {
-    max-width: 100% !important;  /* ära suru kitsaks */
-  }
-
-  .about details,
-  .about p,
-  .section p {
-    font-size: 1rem;             /* mugavam lugeda */
-    line-height: 1.6;            /* rohkem hingamisruumi */
-    word-break: normal !important;
-    overflow-wrap: break-word !important;
-  }
-
-  .section {
-    padding: 2rem 1rem !important; /* vähem tühja ala, parem sobivus ekraanile */
-  }
+@media (max-width: 600px){
+  .balanced{ max-width: 100% !important; }
+  .section{ padding: 2rem 1rem !important; }
 }
