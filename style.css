@@ -160,3 +160,23 @@ a:hover{text-decoration:underline}
   /* Small horizontal padding for readability */
   .about, .section { padding-left: 1rem !important; padding-right: 1rem !important; }
 }
+
+/* Mobiili tekstifiks */
+@media (max-width: 600px) {
+  .balanced {
+    max-width: 100% !important;  /* ära suru kitsaks */
+  }
+
+  .about details,
+  .about p,
+  .section p {
+    font-size: 1rem;             /* mugavam lugeda */
+    line-height: 1.6;            /* rohkem hingamisruumi */
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .section {
+    padding: 2rem 1rem !important; /* vähem tühja ala, parem sobivus ekraanile */
+  }
+}
