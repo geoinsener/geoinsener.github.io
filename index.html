@@ -6,6 +6,25 @@
   <meta name="description" content="IB Lehar Leetsaar — geotehniline projekteerimine, vundamendid ja ekspertiis.">
   <title>IB Lehar Leetsaar — Geoinsener</title>
   <link rel="stylesheet" href="style.css?v=8">
+
+  <!-- Hotfix: inline CSS to kill vertical text on some in-app browsers -->
+  <style id="hotfix-horizontal-text">
+    * { -webkit-text-orientation: mixed !important; text-orientation: mixed !important; }
+    *, *::before, *::after {
+      writing-mode: horizontal-tb !important;
+      -webkit-writing-mode: horizontal-tb !important;
+      white-space: normal !important;
+      word-break: normal !important;
+      overflow-wrap: break-word !important;
+      letter-spacing: normal !important;
+    }
+    @media (max-width: 640px){
+      .balanced{ max-width: 100% !important; }
+      .container{ max-width: 100% !important; }
+      .section{ padding-left: 1rem !important; padding-right: 1rem !important; }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip-link" href="#main">Liigu sisu juurde</a>
