@@ -5,48 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="IB Lehar Leetsaar — geotehniline projekteerimine, vundamendid ja ekspertiis.">
   <title>IB Lehar Leetsaar — Geoinsener</title>
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=3">
 
-  <!-- Hotfix: inline CSS to kill vertical text on some in-app browsers -->
-  <!-- Hotfix v2: force horizontal text & normal block flow in content sections (for in-app browsers) -->
-  <!-- Hotfix v3: kill multi-columns + enforce normal flow for headings/lists (wide breakpoint) -->
-  <style id="hotfix-horizontal-text-scoped">
-    html.inapp .content, html.inapp .content * {
-      writing-mode: horizontal-tb !important;
-      -webkit-writing-mode: horizontal-tb !important;
-      text-orientation: mixed !important;
-      -webkit-text-orientation: mixed !important;
-      white-space: normal !important;
-      word-break: normal !important;
-      overflow-wrap: break-word !important;
-      letter-spacing: normal !important;
-      text-transform: none !important;
-      transform: none !important;
-    }
-    html.inapp .content h1, html.inapp .content h2, html.inapp .content h3,
-    html.inapp .content h4, html.inapp .content h5, html.inapp .content h6,
-    html.inapp .content p, html.inapp .content li, html.inapp .content summary {
-      display:block !important; line-height:1.5 !important;
-    }
-    /* Disable multi-columns in references only for in-app or phones */
-    html.inapp .ref-list { columns: 1 !important; -webkit-columns:1 !important; -moz-columns:1 !important; }
-    @media (max-width: 740px){
-      .balanced{ max-width: 100% !important; }
-      .ref-list { columns: 1 !important; -webkit-columns:1 !important; -moz-columns:1 !important; }
-    }
-  </style>
-
-
-  <script id="ua-flag">
-    (function(){
-      try{
-        var ua = navigator.userAgent || "";
-        var isInApp = /FBAN|FBAV|Instagram|Line|MicroMessenger|Messenger|Twitter/i.test(ua);
-        if(isInApp){ document.documentElement.classList.add('inapp'); }
-      }catch(e){}
-    })();
-  </script>
-
+  <link rel="stylesheet" href="mobile.css?v=1" media="(max-width: 740px)">
 </head>
 <body>
   <a class="skip-link" href="#main">Liigu sisu juurde</a>
@@ -173,7 +134,8 @@
               <a href="tel:+37253409015">+372 5340 9015</a></p>
           </div>
         </div>
-                <form class="contact-form" id="contactForm" method="POST" novalidate>
+        <!-- Formspree: replace the XXXXXXXX with your real Form ID -->
+        <form class="contact-form" id="contactForm" method="POST" novalidate>
           <h3 data-i18n="contact.form.title">Võta ühendust</h3>
           <input type="hidden" name="_subject" value="Uus kontaktisõnum veebilehelt">
           <input type="text" name="_honey" style="display:none">
@@ -203,6 +165,6 @@
     </footer>
   </main>
 
-  <script src="script.js?v=2" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

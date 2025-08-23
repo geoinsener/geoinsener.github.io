@@ -1,0 +1,33 @@
+
+/* Mobile-only stylesheet (<=740px) to prevent vertical text stacking in in-app browsers */
+:root{ font-size: 16px; }
+
+/* Kill any vertical writing modes, transforms, excessive spacing */
+html, body, .content, .content * {
+  writing-mode: horizontal-tb !important;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  -webkit-text-orientation: mixed !important;
+  transform: none !important;
+  letter-spacing: normal !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Ensure normal block flow for text elements */
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6,
+.content p, .content li, .content summary {
+  display: block !important;
+  line-height: 1.5 !important;
+}
+
+/* One-column lists; disable multi-columns entirely */
+.ref-list { columns: 1 !important; -webkit-columns: 1 !important; -moz-columns: 1 !important; }
+ul, ol { padding-left: 1.1rem !important; }
+
+/* Layout simplifications on mobile */
+.balanced { max-width: 100% !important; }
+.service-list { grid-template-columns: 1fr !important; }
+.contact-grid { grid-template-columns: 1fr !important; }
+.section { padding-left: 1rem !important; padding-right: 1rem !important; }
